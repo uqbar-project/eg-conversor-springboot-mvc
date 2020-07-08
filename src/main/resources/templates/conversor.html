@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+
+<body>
+    <h2>Convertir</h2>
+    <form action="#" th:action="@{/convertir}" th:object="${conversor}" method="post">
+        <fieldset>
+            <p for="titulo">Millas
+                <input type="number" th:field="*{millas}" required="true" name="millas" class="form-control"
+                    placeholder="Valor en millas" autofocus="autofocus" />
+            </p>
+            <p for="kilometros">Kilometros: 
+            <strong><span class="lead" th:text="${conversor.kilometros()}"></span></strong>
+            </p>
+            <button type="submit" class="btn btn-primary">Convertir</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
