@@ -1,4 +1,4 @@
-package org.uqbar.domain
+package org.uqbar.conversor.domain
 
 import org.eclipse.xtend.lib.annotations.Accessors
 
