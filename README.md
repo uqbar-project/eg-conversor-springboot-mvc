@@ -4,7 +4,7 @@
 
 <img src="https://cloud.githubusercontent.com/assets/4549002/17750101/fa2f7334-6496-11e6-864f-6f57e8d7bc67.png" height="150" width="150"/>
 
- Conversor de unidades de medida que trabaja con servicios REST + templating a html con Spring MVC y [Thymeleaf](https://es.wikipedia.org/wiki/Thymeleaf)
+ Conversor de unidades de medida que trabaja con servicios REST + templating a html con Spring MVC y [Thymeleaf](https://es.wikipedia.org/wiki/Thymeleaf).
  
 # Thymeleaf
 
@@ -28,7 +28,7 @@ class Conversor {
 }
 ```
 
-Que cuenta con el atributo millas (por defecto vale 1). Los kilometros se calculan en base a las millas.
+Que cuenta con el atributo millas (por defecto vale 1). Los kilómetros se calculan en base a las millas.
 
 # Modo de uso
 
@@ -75,7 +75,7 @@ Vemos la definición del formulario:
 
 ### `th:action`
 
-Es la acción que se ejecuta al clickear en el boton "convertir". Le asginamos el valor `"@{/convertir}"` que es una expresión para redirigir a una URL. 
+Es la acción que se ejecuta al clickear en el botón Convertir. Le asginamos el valor `"@{/convertir}"` que es una expresión para redirigir a una URL. 
 
 Esto nos dirige endpoint `/converitr`, haciendo un pedido POST.
 
@@ -85,7 +85,7 @@ Representa el model object que se usa para recolectar los datos que se ingresan 
 
 También se usa para mostrar el valor de los kilómetros. 
 
-Le seteamos `"${conversor}"`. El signo $ sirve para obtener una variable de contexto (también llamadas "atributos del modelo").
+Le seteamos `"${conversor}"`. El signo $ sirve para obtener una variable de contexto (también conocidas como "atributos del modelo").
 
 `th:object="${conversor}"` sería equivalente a la siguiente línea de código en SpEL (Spring Expression Language): 
 
@@ -101,7 +101,7 @@ Despúes veremos como se relaciona esto con la clase de dominio Conversor.
 
 Es un campo del formulario.
 
-Le asignamos `"*{millas}"`. El * es una expresión de selección. Entre las llaves puedo poner un atributo o método del model object (el conversor).
+Le asignamos `"*{millas}"`. El * se usa para expresiones de selección. Entre las llaves puedo poner un atributo o método del model object (el conversor).
 
 También puedo seguir encadenando mensajes, pero en este caso no es necesario.
 
@@ -119,7 +119,7 @@ Evalua la expresión que pongamos como valor y setea el resultado de esta evalua
 
 Lo usamos para mostrar el valor de los kilometros.
 
-`th:text="*{kilometros()}"``.
+`th:text="*{kilometros()}"`.
 
 ## ConversorController
 
@@ -147,7 +147,7 @@ Es la ruta por defecto cuando ingresamos a http://localhost:8080. Nos redirige a
 ```
 Va a renderizar la vista "conversor.html" que se encuentra en el directorio "templates".
 
-Si el modelo no tiene el atributo "conversor" se le asigna una nueva instancia de Conversor con `model.addAttribute(new Conversor)`.
+Si el modelo no tiene el atributo "conversor" se le asigna una nueva instancia del Conversor con `model.addAttribute(new Conversor)`.
 
 Si a `addAttribute` no le pasamos el nombre del atributo a agregar, lo determina en base al tipo concreto recibido con el método [getVariableName](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/Conventions.html#getVariableName-java.lang.Object-).
 
