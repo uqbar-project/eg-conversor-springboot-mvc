@@ -17,7 +17,9 @@ class ConversorController {
 
 	@GetMapping("/conversor")
 	def index(Model model) {
-		model.addAttribute(model.getAttribute("conversor") ?: new Conversor())
+		if (model.getAttribute("conversor") === null) {
+			model.addAttribute(new Conversor)
+		}
 		return 'conversor'
 	}
 
