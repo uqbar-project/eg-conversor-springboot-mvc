@@ -10,7 +10,7 @@
                     placeholder="Valor en millas" autofocus="autofocus" />
             </p>
             <p for="kilometros">Kilometros: 
-            <strong><span class="lead" th:text="${conversor.kilometros()}"></span></strong>
+            <strong><span class="lead" th:text="*{kilometros()}"></span></strong>
             </p>
             <button type="submit" class="btn btn-primary">Convertir</button>
         </fieldset>
