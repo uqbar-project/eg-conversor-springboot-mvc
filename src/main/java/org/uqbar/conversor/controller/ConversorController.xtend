@@ -22,8 +22,7 @@ class ConversorController {
 	}
 
 	@PostMapping("/convertir")
-	def convertir(Conversor model, RedirectAttributes redirectAttributes) {
-		val conversor = new Conversor => [millas = model.millas]
+	def convertir(Conversor conversor, RedirectAttributes redirectAttributes) {
 		redirectAttributes.addFlashAttribute(conversor) // addFlashAttribute me permite guardar un objeto y addAttribute solo primitivos
 		redirectToConversor
 	}
