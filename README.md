@@ -28,7 +28,7 @@ class Conversor {
 }
 ```
 
-Que cuenta con el atributo millas (por defecto vale 1). Los kilómetros se calculan en base a las millas.
+Que cuenta con el atributo millas (por defecto valen 1). Los kilómetros se calculan en base a las millas.
 
 # Modo de uso
 
@@ -87,7 +87,7 @@ También se usa para mostrar el valor de los kilómetros.
 
 Le seteamos `"${conversor}"`. El signo $ sirve para obtener una variable de contexto (también conocidas como "atributos del modelo").
 
-`th:object="${conversor}"` sería equivalente a la siguiente línea de código en SpEL (Spring Expression Language): 
+`"${conversor}"` sería equivalente a la siguiente línea de código en SpEL (Spring Expression Language): 
 
 ```SpEL
 
@@ -145,7 +145,7 @@ Es la ruta por defecto cuando ingresamos a http://localhost:8080. Nos redirige a
 		return 'conversor'
 	}
 ```
-Va a renderizar la vista "conversor.html" que se encuentra en el directorio "templates".
+Va devolver la vista "conversor.html" que se encuentra en el directorio "templates".
 
 Si el modelo no tiene el atributo "conversor" se le asigna una nueva instancia del Conversor con `model.addAttribute(new Conversor)`.
 
