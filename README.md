@@ -41,8 +41,7 @@ Que cuenta con el atributo millas (por defecto valen 1). Los kilómetros se calc
 
 ### Opción B: Desde línea de comandos
 
-1. Generar jar con dependencias: `mvn clean compile assembly:single`
-2. Ejecutar el jar generador: `java -jar target/conversor-xtrest-0.0.1-SNAPSHOT-jar-with-dependencies.jar`
+1. Correr la siguiente instrucción: `mvn spring-boot:run`
 
 Esta opción requiere menos recursos de sistema porque no es necesario ejecutar Eclipse.
 
@@ -73,13 +72,13 @@ Vemos la definición del formulario:
     </form>
 ```
 
-### `th:action`
+### th:action
 
 Es la acción que se ejecuta al clickear en el botón Convertir. Le asginamos el valor `"@{/convertir}"` que es una expresión para redirigir a una URL. 
 
 Esto nos dirige endpoint `/converitr`, haciendo un pedido POST.
 
-### `th:object`
+### th:object
 
 Representa el model object que se usa para recolectar los datos que se ingresan en el formulario (las millas).
 
@@ -97,7 +96,7 @@ Le seteamos `"${conversor}"`. El signo $ sirve para obtener una variable de cont
 
 Despúes veremos como se relaciona esto con la clase de dominio Conversor.
 
-### `th:field`
+### th:field
 
 Es un campo del formulario.
 
@@ -113,13 +112,13 @@ También puedo seguir encadenando mensajes, pero en este caso no es necesario.
 
 ```
 
-### `th:text`
+### th:text
 
 Evalua la expresión que pongamos como valor y setea el resultado de esta evaluación como body del tag.
 
 Lo usamos para mostrar el valor de los kilometros.
 
-`th:text="*{kilometros()}"`.
+`th:text="*{kilometros()}"`
 
 ## ConversorController
 
